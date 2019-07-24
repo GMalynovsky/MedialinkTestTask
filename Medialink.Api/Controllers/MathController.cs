@@ -17,7 +17,7 @@ namespace Medialink.Api.Controllers
         public HttpResponseMessage Add(int a, int b)
         {
             var response = new HttpResponseMessage(HttpStatusCode.OK);
-            response.Content = new StringContent(Convert.ToString(a + b));
+            response.Content = new StringContent(Convert.ToString(a + b) + "\n\rOk");
 
             return response;
         }
