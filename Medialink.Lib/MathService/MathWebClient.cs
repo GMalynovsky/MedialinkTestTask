@@ -1,22 +1,25 @@
-﻿using RestSharp;
+﻿using MediaLink.Lib.LogService;
+using RestSharp;
 using System;
 
 namespace MediaLink.Lib
 {
     public class MathWebClient
     {
-        private IRestClient _restClient;
+        private readonly IRestClient _restClient;
+        private readonly ILogger _logService;
 
-        public MathWebClient()
+        public MathWebClient(IMedialinkRestClient restClient, ILogger logger)
         {
-            _restClient = new RestClient("http://api.mathweb.com/");
+            _restClient = restClient;
+            _logService = logger;
         }
 
         public int Add(int a, int b)
         {
             string sum = _restClient.Get(new RestRequest($"add?a={a}&b={b}", Method.GET)).Content;
 
-            //log the request
+            _logService.Log("", LogEntryType.Event);
 
             return Convert.ToInt32(sum);
         }
@@ -25,7 +28,7 @@ namespace MediaLink.Lib
         {
             string product = _restClient.Get(new RestRequest($"multiply?a={a}&b={b}", Method.GET)).Content;
 
-            //log the request
+            _logService.Log("", LogEntryType.Event);
 
             return Convert.ToInt32(product);
         }
@@ -34,7 +37,7 @@ namespace MediaLink.Lib
         {
             string quotient = _restClient.Get(new RestRequest($"divide?a={a}&b={b}", Method.GET)).Content;
 
-            //log the request
+            _logService.Log("", LogEntryType.Event);
 
             return Convert.ToInt32(quotient);
         }
