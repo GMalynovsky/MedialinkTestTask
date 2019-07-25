@@ -1,7 +1,7 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-# Visual Studio 14
-VisualStudioVersion = 14.0.25420.1
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.29123.88
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Medialink.Lib", "Medialink.Lib\Medialink.Lib.csproj", "{37A2DD28-111C-48DB-B9A6-CD1C1EBF82FA}"
 EndProject
@@ -10,6 +10,8 @@ EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Medialink.Api.Tests", "Medialink.Api.Tests\Medialink.Api.Tests.csproj", "{8D0DC7BD-5BD3-462E-BDBB-A65E9AC11905}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Medialink.Lib.Tests", "Medialink.Lib.Tests\Medialink.Lib.Tests.csproj", "{271AB625-81DA-45E9-BBB9-76E39A718CD3}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RootConsole", "RootConsole\RootConsole.csproj", "{5B42F4E5-DD8A-4C93-B924-D313DA141F22}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -33,8 +35,15 @@ Global
 		{271AB625-81DA-45E9-BBB9-76E39A718CD3}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{271AB625-81DA-45E9-BBB9-76E39A718CD3}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{271AB625-81DA-45E9-BBB9-76E39A718CD3}.Release|Any CPU.Build.0 = Release|Any CPU
+		{5B42F4E5-DD8A-4C93-B924-D313DA141F22}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{5B42F4E5-DD8A-4C93-B924-D313DA141F22}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{5B42F4E5-DD8A-4C93-B924-D313DA141F22}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{5B42F4E5-DD8A-4C93-B924-D313DA141F22}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {EB721BFA-C682-41E9-AD19-5B2470F262AD}
 	EndGlobalSection
 EndGlobal

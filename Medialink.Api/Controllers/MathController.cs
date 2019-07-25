@@ -31,6 +31,7 @@ namespace Medialink.Api.Controllers
             return response;
         }
 
+        [HttpGet]
         public HttpResponseMessage Divide(int a, int b)
         {
             var response = new HttpResponseMessage(HttpStatusCode.OK);

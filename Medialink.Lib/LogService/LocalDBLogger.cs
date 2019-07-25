@@ -1,6 +1,8 @@
 ﻿using System;
+using System.Data.SqlClient;
 using System.Diagnostics;
 using System.Threading.Tasks;
+using Dapper;
 
 namespace MediaLink.Lib.LogService
 {
@@ -12,11 +14,13 @@ namespace MediaLink.Lib.LogService
             {
                 switch (type)
                 {
-                    case LogEntryType.Error: LogError(message);
+                    case LogEntryType.Error:
+                        LogError(message);
                         break;
                     case LogEntryType.Unknown:
                     case LogEntryType.Event:
-                    default: LogEvent(message);
+                    default:
+                        LogEvent(message);
                         break;
                 }
             }
