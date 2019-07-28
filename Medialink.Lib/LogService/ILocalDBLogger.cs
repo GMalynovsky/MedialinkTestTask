@@ -1,6 +1,7 @@
 ﻿namespace MediaLink.Lib.LogService
 {
-    interface ILocalDBLogger : ILogger
+    public interface ILocalDBLogger : ILogger
     {
+        LogEntry GetLogEntryById(int id);
     }
 }

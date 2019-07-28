@@ -48,7 +48,7 @@ namespace MediaLink.Lib
 
                 var result = Convert.ToInt32(response);
 
-                Log($"{operation.ToString()}", LogEntryType.Event, a, b, result);
+                Log($"{operation}", LogEntryType.Event, a, b, result);
 
                 return result;
             }
