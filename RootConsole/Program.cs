@@ -9,7 +9,7 @@ namespace RootConsole
         {
             Console.WriteLine("Hello World!");
 
-            var client = MathClientBootstrapper.GetInjectedMathClient();
+            var client = MathClientBootstrapper.GetDIMathClient();
 
             Console.WriteLine(client.Add(3, 2));
             Console.WriteLine(client.Multiply(3, 2));
