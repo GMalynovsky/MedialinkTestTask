@@ -72,6 +72,8 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="MathClientBootstrapper.cs" />
+    <Compile Include="MathService\IMathRestClient.cs" />
+    <Compile Include="MathService\MathRestClient.cs" />
     <Compile Include="MathService\IMathWebClient.cs" />
     <Compile Include="LogService\ILocalDBLogger.cs" />
     <Compile Include="LogService\ILogger.cs" />
