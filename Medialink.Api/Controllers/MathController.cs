@@ -4,7 +4,6 @@ using System.Linq;
 using System.Net;
 using System.Net.Http;
 using System.Web.Http;
-using System.Web.Services;
 
 namespace Medialink.Api.Controllers
 {
@@ -14,7 +13,7 @@ namespace Medialink.Api.Controllers
         {
         }
 
-        [WebMethod]
+        [HttpGet]
         public HttpResponseMessage Add(int a, int b)
         {
             var response = new HttpResponseMessage(HttpStatusCode.OK)
