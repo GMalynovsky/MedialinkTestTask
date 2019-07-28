@@ -1,6 +1,10 @@
 ﻿using MediaLink.Lib;
+using MediaLink.Lib.LogService;
+using MediaLink.Lib.MathService;
 using NSubstitute;
+using NSubstitute.Extensions;
 using NUnit.Framework;
+using RestSharp;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -44,9 +48,21 @@ namespace Medialink.Lib.Tests
         [Test]
         public void TestSubstituteAdd()
         {
-            var calculator = Substitute.For<IMathWebClient>();
+            var mrk = Substitute.For<IMathRestClient>();
+            mrk
+                .Configure()
+                .Add(Arg.Any<int>(), Arg.Any<int>())
+                .Returns(x => ((int)x[0] + (int)x[1]).ToString());
 
-            calculator.Add(1, 2).Returns(3);
+            var logger = Substitute.For<ILogger>();
+            var counter = 0;
+            logger
+                .Configure()
+                .Log(Arg.Any<string>(), LogEntryType.Event, Arg.Any<int>(), Arg.Any<int>(), Arg.Any<int>())
+                .ReturnsForAnyArgs(x => counter)
+                .AndDoes(x => counter++);
+
+            var calculator = Substitute.For<MathWebClient>(mrk, logger);
 
             Assert.That(calculator.Add(1, 2), Is.EqualTo(3));
         }

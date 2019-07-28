@@ -4,9 +4,9 @@ using System;
 
 namespace MediaLink.Lib
 {
-    internal class MathWebClient : IMathWebClient
+    public class MathWebClient : IMathWebClient
     {
-        internal MathWebClient(IMathRestClient mathRestClient, ILogger logger)
+        public MathWebClient(IMathRestClient mathRestClient, ILogger logger)
         {
             _mathRestClient = mathRestClient;
             _logService = logger;
