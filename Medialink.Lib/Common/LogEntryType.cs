@@ -1,4 +1,4 @@
-﻿namespace MediaLink.Lib.LogService
+﻿namespace MediaLink.Lib
 {
     public enum LogEntryType
     {

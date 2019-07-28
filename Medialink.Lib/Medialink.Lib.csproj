@@ -80,9 +80,9 @@
     <Compile Include="LogService\ILocalDBLogger.cs" />
     <Compile Include="LogService\ILogger.cs" />
     <Compile Include="LogService\LocalDBLogger.cs" />
-    <Compile Include="LogService\LogEntryType.cs" />
+    <Compile Include="Common\LogEntryType.cs" />
     <Compile Include="MathWebClient.cs" />
-    <Compile Include="MathService\OperationType.cs" />
+    <Compile Include="Common\OperationType.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>

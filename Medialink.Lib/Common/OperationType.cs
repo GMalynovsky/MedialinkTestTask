@@ -1,4 +1,4 @@
-﻿namespace MediaLink.Lib.MathService
+﻿namespace MediaLink.Lib
 {
     public enum OperationType
     {
