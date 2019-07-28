@@ -1,42 +1,45 @@
-﻿using System;
+﻿using Dapper;
+using System;
 using System.Data.SqlClient;
-using System.Diagnostics;
-using System.Threading.Tasks;
-using Dapper;
 
 namespace MediaLink.Lib.LogService
 {
-    class LocalDBLogger : ILocalDBLogger
+    internal class LocalDBLogger : Logger
     {
-        public void Log(string message, LogEntryType type)
+        #region Consts
+
+        private const string CONNECTION_STRING = @"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=|DataDirectory|\Database.mdf;Integrated Security=True";
+        private const string INSERT_EVENT_SQL = "INSERT INTO LogEntry (Type, A, B, Result, DateTime) OUTPUT INSERTED.[Id] Values (@Type, @A, @B, @Result, @DateTime);";
+        private const string INSERT_ERROR_SQL = "INSERT INTO LogError (Message, DateTime) OUTPUT INSERTED.[Id] Values (@Message, @DateTime);";
+
+        #endregion Consts
+
+        protected override int LogError(string message)
         {
-            try
+            int id = -1;
+
+            using (var connection = new SqlConnection(CONNECTION_STRING))
             {
-                switch (type)
-                {
-                    case LogEntryType.Error:
-                        LogError(message);
-                        break;
-                    case LogEntryType.Unknown:
-                    case LogEntryType.Event:
-                    default:
-                        LogEvent(message);
-                        break;
-                }
+                id = connection.QuerySingle<int>(INSERT_ERROR_SQL, new { Message = message, DateTime = DateTime.Now });
+
+                Console.WriteLine("Inserted row id: " + id);
             }
-            catch (Exception)
-            {
-            }
+
+            return id;
         }
 
-        private void LogError(string message)
+        protected override int LogEvent(LogEntry entry)
         {
-            Debug.WriteLine(message);
-        }
+            int id = -1;
 
-        void LogEvent(string message)
-        {
-            Debug.WriteLine(message);
+            using (var connection = new SqlConnection(CONNECTION_STRING))
+            {
+                id = connection.QuerySingle<int>(INSERT_EVENT_SQL, entry);
+
+                Console.WriteLine("Inserted row id: " + id);
+            }
+
+            return id;
         }
     }
 }

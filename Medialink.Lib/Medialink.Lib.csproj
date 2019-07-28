@@ -71,16 +71,18 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="LogService\LogEntry.cs" />
+    <Compile Include="LogService\Logger.cs" />
     <Compile Include="MathClientBootstrapper.cs" />
     <Compile Include="MathService\IMathRestClient.cs" />
     <Compile Include="MathService\MathRestClient.cs" />
-    <Compile Include="MathService\IMathWebClient.cs" />
+    <Compile Include="IMathWebClient.cs" />
     <Compile Include="LogService\ILocalDBLogger.cs" />
     <Compile Include="LogService\ILogger.cs" />
     <Compile Include="LogService\LocalDBLogger.cs" />
     <Compile Include="LogService\LogEntryType.cs" />
-    <Compile Include="MathOperation.cs" />
-    <Compile Include="MathService\MathWebClient.cs" />
+    <Compile Include="MathWebClient.cs" />
+    <Compile Include="MathService\OperationType.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
@@ -98,6 +100,16 @@
       <Install>false</Install>
     </BootstrapperPackage>
   </ItemGroup>
+  <ItemGroup>
+    <Content Include="Database.mdf">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Database_log.ldf">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+      <DependentUpon>Database.mdf</DependentUpon>
+    </Content>
+  </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.

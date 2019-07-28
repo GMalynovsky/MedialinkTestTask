@@ -1,16 +1,9 @@
 ﻿using RestSharp;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace MediaLink.Lib.MathService
 {
     public class MathRestClient : IMathRestClient
     {
-        readonly IRestClient _restClient;
-
         public MathRestClient(IRestClient restClient)
         {
             _restClient = restClient;
@@ -36,5 +29,7 @@ namespace MediaLink.Lib.MathService
 
             return quotient;
         }
+
+        readonly IRestClient _restClient;
     }
 }
