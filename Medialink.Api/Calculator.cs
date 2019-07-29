@@ -30,10 +30,10 @@
         {
             int result;
 
-            checked
-            {
-                result = a + b;
-            }
+            //checked
+            //{
+                result = checked(a + b);
+            //}
 
             return result;
         }
