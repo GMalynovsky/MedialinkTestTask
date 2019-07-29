@@ -1,16 +1,14 @@
 ﻿using Medialink.Common;
 using System.Net.Http;
 using System.Web.Http;
+using Unity;
 
 namespace Medialink.Api.Controllers
 {
     public class MathController : ApiController
     {
-        public ICalculatorService Service;
-
         public MathController()
         {
-            Service = new CalculatorService();
         }
 
         [HttpGet]
@@ -30,5 +28,8 @@ namespace Medialink.Api.Controllers
         {
             return Service.Calculate(a, b, OperationType.Divide);
         }
+
+        [Dependency]
+        internal ICalculatorService Service;
     }
 }
