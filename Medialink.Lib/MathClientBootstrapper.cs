@@ -15,6 +15,7 @@ namespace MediaLink.Lib
 
             container.RegisterType<ILogger, LocalDBLogger>();
             container.RegisterType<IRestClient, RestClient>(new InjectionConstructor("https://medialinkapi.azurewebsites.net/api/math/"));
+            //container.RegisterType<IRestClient, RestClient>(new InjectionConstructor("http://localhost:55417/api/math/"));
             container.RegisterType<IMathRestClient, MathRestClient>();
 
             ServicePointManager.SecurityProtocol = SecurityProtocolType.Tls12 | SecurityProtocolType.Tls11 | SecurityProtocolType.Tls;
