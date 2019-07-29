@@ -82,7 +82,6 @@
     <Compile Include="LogService\LocalDBLogger.cs" />
     <Compile Include="Common\LogEntryType.cs" />
     <Compile Include="MathWebClient.cs" />
-    <Compile Include="Common\OperationType.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
@@ -109,7 +108,12 @@
       <DependentUpon>Database.mdf</DependentUpon>
     </Content>
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <ProjectReference Include="..\Medialink.Common\Medialink.Common.csproj">
+      <Project>{7121fda5-8874-4183-b841-6d60aa243b78}</Project>
+      <Name>Medialink.Common</Name>
+    </ProjectReference>
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.

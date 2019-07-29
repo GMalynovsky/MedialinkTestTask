@@ -1,27 +1,38 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Runtime.CompilerServices;
-using System.Web;
-
-namespace Medialink.Api
+﻿namespace Medialink.Api
 {
     public class Calculator
     {
-        public static int Calculate(int a, int b, [CallerMemberName] string operation = null)
+        public static int Divide(int a, int b)
         {
-            int result = 0;
+            int result;
 
-            switch (operation)
+            checked
             {
-                case "Add": result = a + b;
-                    break;
-                case "Multiply": result = a * b;
-                    break;
-                case "Divide": result = a / b;
-                    break;
-                default: result = 0;
-                    break;
+                result = a / b;
+            }
+
+            return result;
+        }
+
+        public static int Multiply(int a, int b)
+        {
+            int result;
+
+            checked
+            {
+                result = a * b;
+            }
+
+            return result;
+        }
+
+        public static int Add(int a, int b)
+        {
+            int result;
+
+            checked
+            {
+                result = a + b;
             }
 
             return result;

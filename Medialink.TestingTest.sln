@@ -13,6 +13,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Medialink.Lib.Tests", "Medi
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RootConsole", "RootConsole\RootConsole.csproj", "{4D63714B-F8D1-41BD-8C91-3A52881C5079}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Medialink.Common", "Medialink.Common\Medialink.Common.csproj", "{7121FDA5-8874-4183-B841-6D60AA243B78}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -39,6 +41,10 @@ Global
 		{4D63714B-F8D1-41BD-8C91-3A52881C5079}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{4D63714B-F8D1-41BD-8C91-3A52881C5079}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{4D63714B-F8D1-41BD-8C91-3A52881C5079}.Release|Any CPU.Build.0 = Release|Any CPU
+		{7121FDA5-8874-4183-B841-6D60AA243B78}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{7121FDA5-8874-4183-B841-6D60AA243B78}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{7121FDA5-8874-4183-B841-6D60AA243B78}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{7121FDA5-8874-4183-B841-6D60AA243B78}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

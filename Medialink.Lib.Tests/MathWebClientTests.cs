@@ -2,21 +2,16 @@
 using MediaLink.Lib.LogService;
 using MediaLink.Lib.MathService;
 using NSubstitute;
-using NSubstitute.Core;
 using NSubstitute.Extensions;
 using NUnit.Framework;
-using RestSharp;
 using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace Medialink.Lib.Tests
 {
     public class MathWebClientTests
     {
         [Test]
+        [Category("Service Connected")]
         public void TestConnectedAdd()
         {
             var client = MathClientBootstrapper.GetDIMathClient();
@@ -27,6 +22,7 @@ namespace Medialink.Lib.Tests
         }
 
         [Test]
+        [Category("Service Connected")]
         public void TestConnectedMultiply()
         {
             var client = MathClientBootstrapper.GetDIMathClient();
@@ -37,6 +33,7 @@ namespace Medialink.Lib.Tests
         }
 
         [Test]
+        [Category("Service Connected")]
         public void TestConnectedDivide()
         {
             var client = MathClientBootstrapper.GetDIMathClient();
@@ -47,6 +44,7 @@ namespace Medialink.Lib.Tests
         }
 
         [Test]
+        [Category("Service Substituted")]
         public void TestSubstituteAdd()
         {
             var calculator = GetMathWebClientSubstitute();
@@ -55,6 +53,7 @@ namespace Medialink.Lib.Tests
         }
 
         [Test]
+        [Category("Service Substituted")]
         public void TestSubstituteMultiply()
         {
             var calculator = GetMathWebClientSubstitute();
@@ -63,6 +62,7 @@ namespace Medialink.Lib.Tests
         }
 
         [Test]
+        [Category("Service Substituted")]
         public void TestSubstituteDivide()
         {
             var calculator = GetMathWebClientSubstitute();
@@ -71,6 +71,7 @@ namespace Medialink.Lib.Tests
         }
 
         [Test]
+        [Category("Service Substituted")]
         public void TestSubstituteAddAndLog()
         {
             var logger = GetLoggerSubstitute();

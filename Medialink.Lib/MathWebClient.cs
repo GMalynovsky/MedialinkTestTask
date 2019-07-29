@@ -1,4 +1,5 @@
-﻿using MediaLink.Lib.LogService;
+﻿using Medialink.Common;
+using MediaLink.Lib.LogService;
 using MediaLink.Lib.MathService;
 using System;
 
