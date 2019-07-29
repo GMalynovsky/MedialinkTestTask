@@ -6,10 +6,10 @@
         {
             int result;
 
-            //checked
-            //{
+            checked
+            {
                 result = a / b;
-            //}
+            }
 
             return result;
         }
@@ -18,10 +18,10 @@
         {
             int result;
 
-            //checked
-            //{
+            checked
+            {
                 result = a * b;
-            //}
+            }
 
             return result;
         }
@@ -30,10 +30,10 @@
         {
             int result;
 
-            //checked
-            //{
+            checked
+            {
                 result = a + b;
-            //}
+            }
 
             return result;
         }
