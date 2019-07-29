@@ -30,6 +30,6 @@ namespace Medialink.Api.Controllers
         }
 
         [Dependency]
-        internal ICalculatorService Service;
+        public ICalculatorService Service;
     }
 }
